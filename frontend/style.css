@@ -1,0 +1,110 @@
+:root {
+    --bg: #0a0a0a;
+    --accent: #fff;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+.hero-canvas {
+    height: 300vh;
+    position: relative;
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#headline {
+    font-size: 8vw;
+    font-weight: 900;
+    letter-spacing: 2rem;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+
+#car-wrapper {
+    position: absolute;
+    width: 50%;
+    z-index: 2;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+}
+
+.car-img {
+    width: 100%;
+    height: auto;
+}
+
+.stats-container {
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    gap: 100px;
+    z-index: 3;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box h3 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.stat-box p {
+    font-size: 0.8rem;
+    color: #777;
+    letter-spacing: 3px;
+}
+
+.footer-spacer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #000;
+}
+
+
+/* ... keep your previous styles ... */
+
+.sticky-container {
+    perspective: 1000px; /* Adds depth for the car rotation */
+}
+
+#headline {
+    font-size: 8vw;
+    font-weight: 900;
+    letter-spacing: 2rem;
+    z-index: 1; /* Below the car */
+    transition: text-shadow 0.5s ease-in-out;
+    position: relative;
+}
+
+/* The Glow Class we will trigger with JS */
+.glow {
+    text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #00d4ff;
+    color: #fff;
+}
+
+#car-wrapper {
+    position: absolute;
+    width: 45%;
+    left: -10%; /* Start completely off-screen to the left */
+    z-index: 10; /* Above the text */
+    pointer-events: none;
+}
